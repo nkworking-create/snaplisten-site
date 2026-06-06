@@ -40,39 +40,48 @@
 
     <!-- ===================== 日本語 ===================== -->
     <span class="sec-label">日本語</span>
-    <p class="updated">最終更新日：2026年5月21日</p>
+    <p class="updated">最終更新日：2026年6月6日</p>
 
-    <p>SnapListen（以下「本アプリ」）は、撮影・選択した英文を読み取り、端末の音声で読み上げて繰り返し聴くためのアプリです。本ポリシーは、本アプリが扱う情報とその取り扱いについて説明します。</p>
+    <p>SnapListen（以下「本アプリ」）は、撮影・選択した英文を読み取り、音声で読み上げて繰り返し聴くためのアプリです。本ポリシーは、本アプリが扱う情報とその取り扱いについて説明します。<strong>本アプリはアカウント登録を必要としません。</strong>氏名・メールアドレス・電話番号・支払い情報といった個人を特定する情報を、本アプリは一切収集・保存しません。</p>
 
     <h2>1. 取得・処理する情報</h2>
     <ul>
       <li><strong>写真・画像</strong>：英文を読み取るために、撮影または選択した画像をHTTPSで当方の中継サーバーへ送信し、文字認識（OCR）のためにGoogleのGemini APIへ転送します。画像は文字認識のために一時的に処理されるのみで、当方のサーバーに保存することはありません。</li>
       <li><strong>読み取ったテキスト・保存したセッション</strong>：お使いの端末内にのみ保存されます。当方のサーバーには保存されません。</li>
-      <li><strong>音声読み上げ</strong>：お使いの端末に内蔵された読み上げ機能（text-to-speech）で生成します。音声データが外部へ送信されることはありません。</li>
-      <li><strong>インストール識別子</strong>：初回起動時にランダムな識別子を生成し、アクセストークンの発行と、公平な利用のための1日あたりの利用上限の管理のためだけにサーバーへ送信します。氏名・メールアドレス・Apple IDなど個人を特定する情報とは紐付きません。</li>
+      <li><strong>音声読み上げ（無料版）</strong>：お使いの端末に内蔵された読み上げ機能（text-to-speech）で生成します。音声データが外部へ送信されることはありません。</li>
+      <li><strong>音声読み上げ（Pro版）</strong>：自然な音声を生成するため、対象の英文をHTTPSで当方の中継サーバーへ送信し、ElevenLabsへ転送して音声合成を行います。生成された音声は文単位のハッシュ値で識別され、当方のサーバーおよびお使いの端末にキャッシュされます。キャッシュには英文と音声以外の情報は含まれません。</li>
+      <li><strong>インストール識別子</strong>：初回起動時にランダムな識別子を生成し、アクセストークンの発行・公平な利用のための日次／月次の上限管理・Pro有効期限の管理のためだけにサーバーへ送信します。氏名・メールアドレス・Apple IDなど個人を特定する情報とは紐付きません。</li>
+      <li><strong>購入情報（Pro加入時）</strong>：サブスクリプションの決済はApple（App内課金）が処理します。<strong>本アプリは支払い情報・氏名・連絡先を一切取り扱いません。</strong>Appleから当方サーバーに渡されるのは「Proの有効期限」と「Appleが発行する取引ID」のみで、これらは上記のインストール識別子と紐付けてPro判定にのみ使用されます。</li>
+      <li><strong>広告（無料版のみ）</strong>：Google AdMob によりバナー広告を表示します。<strong>非パーソナライズ広告のみを要求</strong>しているため、興味関心に基づくトラッキングは行われません。Googleの広告配信に必要な範囲でデバイスIDなどの情報がGoogleへ送られますが、これは広告配信の機能のみに使用され、本アプリの利用履歴を他社サービスと結合してプロファイリングする目的では使用されません。</li>
       <li><strong>言語設定</strong>：お使いの端末内にのみ保存されます。</li>
     </ul>
 
     <h2>2. 取得しない情報</h2>
-    <p>本アプリはアカウント登録を必要とせず、氏名・メールアドレス・電話番号・位置情報を取得しません。広告は配信せず、行動追跡（トラッキング）や解析SDKも使用しません。取得した情報を販売することは一切ありません。</p>
+    <p>本アプリはアカウント登録を必要とせず、氏名・メールアドレス・電話番号・住所・位置情報・支払い情報を一切取得しません。<strong>App Tracking Transparency（ATT）対象のIDFA は使用せず、トラッキング目的のダイアログ表示も行いません。</strong>取得した情報を販売することは一切ありません。</p>
 
     <h2>3. 第三者への提供</h2>
     <ul>
       <li><strong>Google（Gemini API）</strong>：文字認識（OCR）のために画像を処理します。</li>
+      <li><strong>Google（AdMob）</strong>：無料版でのバナー広告配信のために、非パーソナライズ広告として最小限の情報を処理します。</li>
+      <li><strong>ElevenLabs</strong>：Pro加入時の自然な音声合成のために、英文を処理します。</li>
+      <li><strong>Apple</strong>：App内課金（サブスクリプションの購入・更新・解約）を処理します。本アプリは決済情報を取り扱わず、すべての支払いはApple経由で行われます。</li>
       <li><strong>Render</strong>：中継サーバーのホスティングに利用します。</li>
     </ul>
     <p>上記以外の第三者へ情報を提供することはありません。</p>
 
     <h2>4. データの保管と削除</h2>
-    <p>読み取ったテキスト・セッション・設定は端末内に保存されます。アプリを削除すると、これらの端末内データも削除されます。送信された画像は処理後にサーバーへ残りません。</p>
+    <p>読み取ったテキスト・セッション・設定は端末内に保存されます。アプリを削除すると、これらの端末内データも削除されます。送信された画像は処理後に当方のサーバーへ残りません。Pro音声のキャッシュには英文と合成音声のみが含まれ、ユーザー固有の情報は含まれません。</p>
 
-    <h2>5. お子様のプライバシー</h2>
+    <h2>5. サブスクリプションについて</h2>
+    <p>Proサブスクリプションは、Apple IDに紐付くApple経由のサブスクリプションです。期間終了の24時間以上前にキャンセルしない限り、自動的に同額で更新されます。管理・解約はiPhoneの「設定 → Apple ID → サブスクリプション」からいつでも行えます。本アプリはApple ID・支払い情報を取り扱わず、解約後はサーバー上のPro有効期限も自動的に失効します。</p>
+
+    <h2>6. お子様のプライバシー</h2>
     <p>本アプリは13歳未満のお子様を対象としていません。</p>
 
-    <h2>6. ポリシーの変更</h2>
+    <h2>7. ポリシーの変更</h2>
     <p>本ポリシーは必要に応じて更新されることがあります。重要な変更がある場合は、本ページ上で告知します。</p>
 
-    <h2>7. お問い合わせ</h2>
+    <h2>8. お問い合わせ</h2>
     <p>本ポリシーや本アプリに関するお問い合わせは、次のメールアドレスまでご連絡ください：<br />
     <a href="mailto:n.k.business0011@gmail.com">n.k.business0011@gmail.com</a></p>
 
@@ -80,39 +89,48 @@
 
     <!-- ===================== English ===================== -->
     <span class="sec-label">English</span>
-    <p class="updated">Last updated: May 21, 2026</p>
+    <p class="updated">Last updated: June 6, 2026</p>
 
-    <p>SnapListen ("the App") lets you capture or select English text, recognize it, and listen to it read aloud by your device so you can repeat it. This policy explains what information the App handles and how.</p>
+    <p>SnapListen ("the App") lets you capture or select English text, recognize it, and listen to it read aloud so you can repeat it. This policy explains what information the App handles and how. <strong>The App requires no account.</strong> We do not collect or store your name, email, phone number, or payment information.</p>
 
     <h2>1. Information we process</h2>
     <ul>
-      <li><strong>Photos / images</strong>: To recognize text, the image you capture or select is sent over HTTPS to our relay server, which forwards it to Google's Gemini API for optical character recognition (OCR). The image is processed transiently for recognition only and is not stored on our servers.</li>
+      <li><strong>Photos / images</strong>: To recognize text, the image you capture or select is sent over HTTPS to our relay server, which forwards it to Google's Gemini API for OCR. The image is processed transiently for recognition only and is not stored on our servers.</li>
       <li><strong>Recognized text & saved sessions</strong>: Stored only on your device, never on our servers.</li>
-      <li><strong>Voice playback</strong>: Generated by your device's built-in text-to-speech. No audio data is sent anywhere.</li>
-      <li><strong>Install identifier</strong>: A random identifier generated on first launch is sent to the server solely to issue an access token and to enforce fair-use daily limits. It is not linked to your name, email, Apple ID, or any personal identity.</li>
+      <li><strong>Voice playback (Free)</strong>: Generated by your device's built-in text-to-speech. No audio data leaves your device.</li>
+      <li><strong>Voice playback (Pro)</strong>: To produce natural voices, the English text is sent over HTTPS to our relay server and forwarded to ElevenLabs for synthesis. Generated audio is cached on our server and on your device, keyed by a content hash of the sentence text. The cache holds only English text and synthesized audio — nothing else.</li>
+      <li><strong>Install identifier</strong>: A random identifier generated on first launch is sent to the server solely to issue an access token, enforce fair-use daily/monthly limits, and track your Pro expiration. It is not linked to your name, email, Apple ID, or any personal identity.</li>
+      <li><strong>Purchase information (Pro)</strong>: Subscription payment is handled by Apple. <strong>The App never sees your name, payment method, or contact information.</strong> Apple gives our server only the "Pro expiration date" and the Apple-issued transaction ID, which we map to your install identifier solely to determine Pro status.</li>
+      <li><strong>Advertising (Free only)</strong>: Google AdMob shows a banner ad. <strong>We request non-personalized ads only</strong>, so no interest-based tracking occurs. Some device information (such as device identifiers) is shared with Google strictly for serving the ad — not for combining your activity in the App with other services to profile you.</li>
       <li><strong>Language preference</strong>: Stored only on your device.</li>
     </ul>
 
     <h2>2. Information we do not collect</h2>
-    <p>The App requires no account and does not collect your name, email, phone number, or location. We serve no ads and use no tracking or analytics SDKs. We never sell any information.</p>
+    <p>The App requires no account and does not collect your name, email, phone number, address, location, or payment information. <strong>We do not use the App Tracking Transparency (ATT) IDFA and never show an ATT prompt.</strong> We never sell any information.</p>
 
     <h2>3. Third parties</h2>
     <ul>
       <li><strong>Google (Gemini API)</strong>: processes images for OCR.</li>
+      <li><strong>Google (AdMob)</strong>: processes the minimal information needed to serve non-personalized banner ads in the Free tier.</li>
+      <li><strong>ElevenLabs</strong>: processes English text for natural voice synthesis when you are Pro.</li>
+      <li><strong>Apple</strong>: handles in-app purchase (subscription buy, renewal, cancellation). The App never handles payment data — all payments go through Apple.</li>
       <li><strong>Render</strong>: hosts our relay server.</li>
     </ul>
     <p>We do not share information with any other third parties.</p>
 
     <h2>4. Data retention & deletion</h2>
-    <p>Recognized text, sessions, and settings are stored on your device. Deleting the App removes this on-device data. Images sent for recognition are not retained on the server after processing.</p>
+    <p>Recognized text, sessions, and settings are stored on your device. Deleting the App removes this on-device data. Images sent for recognition are not retained on the server after processing. The Pro voice cache stores only English text and synthesized audio — no user-specific information.</p>
 
-    <h2>5. Children's privacy</h2>
+    <h2>5. Subscriptions</h2>
+    <p>Pro subscriptions are sold through Apple and tied to your Apple ID. They auto-renew at the listed price unless canceled at least 24 hours before the period ends. Manage or cancel anytime in iPhone Settings → Apple ID → Subscriptions. The App never handles your Apple ID or payment details, and your server-side Pro expiration lapses automatically after cancellation.</p>
+
+    <h2>6. Children's privacy</h2>
     <p>The App is not directed to children under 13.</p>
 
-    <h2>6. Changes to this policy</h2>
+    <h2>7. Changes to this policy</h2>
     <p>We may update this policy from time to time. Material changes will be posted on this page.</p>
 
-    <h2>7. Contact</h2>
+    <h2>8. Contact</h2>
     <p>For questions about this policy or the App, contact:<br />
     <a href="mailto:n.k.business0011@gmail.com">n.k.business0011@gmail.com</a></p>
 
